@@ -5,7 +5,7 @@ module.exports = [{
   choices: [{
     name: 'Default template',
     value: 'default'
-  },
+  }],
   default: 'None'
 },
 {
