@@ -1,13 +1,13 @@
 module.exports = [{
   type: 'list',
   name: 'template',
-  message: '请选择 uni-app 模板',
+  message: 'Please select a uni-app template',
   choices: [{
-    name: '默认模板',
+    name: 'Default template',
     value: 'default'
   },
   {
-    name: '默认模板(TypeScript)',
+    name: 'Default template(TypeScript)',
     value: 'default-ts'
   },
   {
@@ -15,19 +15,19 @@ module.exports = [{
     value: 'dcloudio/hello-uniapp'
   },
   {
-    name: '前后一体登录模板',
+    name: 'Front and back login template',
     value: 'dcloudio/uni-template-login'
   },
   {
-    name: '看图模板',
+    name: 'Look at the picture template',
     value: 'dcloudio/uni-template-picture'
   },
   {
-    name: '新闻/资讯类模板',
+    name: 'news/Information template',
     value: 'dcloudio/uni-template-news'
   },
   {
-    name: '自定义模板',
+    name: 'custom template',
     value: 'custom'
   }
   ],
@@ -37,13 +37,13 @@ module.exports = [{
   when: answers => answers.template === 'custom',
   type: 'input',
   name: 'repo',
-  message: '请输入自定义 uni-app 模板地址',
+  message: 'Please enter the custom uni-app template address',
   filter (input) {
     return new Promise(function (resolve, reject) {
       if (input) {
         resolve(input)
       } else {
-        reject(new Error('uni-app 模板地址不能为空'))
+        reject(new Error('uni-app Template address cannot be empty'))
       }
     })
   }

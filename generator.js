@@ -40,11 +40,11 @@ module.exports = (api, options, rootOptions) => {
   api.extendPackage(pkg => {
     return {
       dependencies: {
-        'regenerator-runtime': '^0.12.1',// 锁定版本，避免高版本在小程序中出错
+        'regenerator-runtime': '^0.12.1',// Lock the version to avoid errors in the applet with the higher version
         '@dcloudio/uni-helper-json': '*'
       },
       devDependencies: {
-        "@babel/runtime": "~7.12.0",// 临时指定版本，7.13.x 会报错
+        "@babel/runtime": "~7.12.0",// Temporarily specify the version, 7.13.x will report an error
         'postcss-comment': '^2.0.0',
         '@dcloudio/types': '*',
         'miniprogram-api-typings': '*',
@@ -52,7 +52,7 @@ module.exports = (api, options, rootOptions) => {
       }
     }
   })
-  if (options.template === 'default-ts') { // 启用 typescript
+  if (options.template === 'default-ts') { // enable typescript
     api.extendPackage(pkg => {
       return {
         dependencies: {
@@ -96,7 +96,7 @@ module.exports = (api, options, rootOptions) => {
       const home = require('user-home')
       const download = require('download-git-repo')
 
-      const spinner = ora('模板下载中...')
+      const spinner = ora('Template download...')
       spinner.start()
 
       const tmp = path.join(home, '.uni-app/templates', template.replace(/[/:]/g, '-'), 'src')
@@ -119,7 +119,7 @@ module.exports = (api, options, rootOptions) => {
         })
       })
 
-      // 合并模板依赖
+      // Merge template dependencies
       const jsonPath = path.join(tmp, './package.json')
       if (fs.existsSync(jsonPath)) {
         try {

@@ -15,5 +15,5 @@
 </script>
 
 <style>
-    /*每个页面公共css */
+    /*	public on every page css */
 </style>
